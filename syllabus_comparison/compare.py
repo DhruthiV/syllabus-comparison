@@ -53,10 +53,10 @@ def compare_syllabi(old_syllabus, new_syllabus, similarity_threshold=0.6):
    
 
     return {
-        # "added": added,
-        # "removed": removed,
-        # "semantic_matches": matches,
-        # "elaborations": elaborations,
-        # "shifted_topics": shifted,
+        "added": added,
+        "removed": removed,
+        "semantic_matches": matches,
+        "elaborations": elaborations,
+        "shifted_topics": shifted,
         "stats":stats
     }
