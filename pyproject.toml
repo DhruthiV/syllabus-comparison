@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "syllabus_comparison"
+version = "0.1.0"
+description = "A package for comparing syllabus topics using NLP."
+authors = [{ name = "Dhruthi V H", email = "dhruthivenkateshheerguppe@gmail.com" }]
+license = { file = "LICENSE" }
+readme = "README.md"
+dependencies = [
+    "sentence-transformers",
+    "torch",
+    "numpy",
+    "pandas"
+]
+
+[tool.setuptools]
+packages = ["syllabus_comparison"]
