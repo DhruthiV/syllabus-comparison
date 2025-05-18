@@ -27,14 +27,14 @@ def generate_comparison_stats(comparison_result):
     )
 
     stats = {
-        "Total Added": added_count,
-        "Total Removed": removed_count,
-        "Total Semantic Matches": semantic_matches_count,
-        "Total Elaborations": elaborations_count,
-        "Total Shifted Topics": shifted_topics_count,
-        "Retained Percentage": f"{retained_percentage:.2f}%",
-        "New Content Percentage": f"{new_content_percentage:.2f}%",
-        "Topic Shift Impact": f"{topic_shift_impact:.2f}%"
+        "total_added": added_count,
+        "total_removed": removed_count,
+        "total_semantic_matches": semantic_matches_count,
+        "total_elaborations": elaborations_count,
+        "total_shifted_topics": shifted_topics_count,
+        "retained_percentage": f"{retained_percentage:.2f}%",
+        "new_content_percentage": f"{new_content_percentage:.2f}%",
+        "topic_shift_impact": f"{topic_shift_impact:.2f}%"
     }
 
     return stats 
