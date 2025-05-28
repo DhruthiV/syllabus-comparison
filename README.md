@@ -6,7 +6,7 @@ A Python package to compare old and new syllabi using NLP-based semantic similar
 - Detects **added** and **removed** topics.
 - Identifies **semantic matches** and **elaborations**.
 - Finds **shifted topics** (topics moved between units).
-- Uses Pretrained [Sentence Transformers](https://www.sbert.net/) (all-MiniLM-L6-v2) for comparison. 
+- Uses Pretrained [Sentence Transformers](https://www.sbert.net/) (all-MiniLM-L6-v2 and also all-mpnet-base-v2) for comparison. 
 
 ## Installation
 
