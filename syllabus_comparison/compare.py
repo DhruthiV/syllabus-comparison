@@ -1,21 +1,32 @@
-from syllabus_comparison.model import load_model
+from syllabus_comparison.model import load_models
 from syllabus_comparison.extract_topics import extract_topics
 from syllabus_comparison.similarity import calculate_similarity, find_best_match
 from syllabus_comparison.report import generate_comparison_stats
+from sklearn.preprocessing import normalize
+import numpy as np
+
+def combined_embeddings(texts, model1, model2):
+    emb1 = model1.encode(texts, convert_to_numpy=True)
+    emb2 = model2.encode(texts, convert_to_numpy=True)
+    combined = np.concatenate([emb1, emb2], axis=1)
+    return normalize(combined)
+
 
 def compare_syllabi(old_syllabus, new_syllabus, similarity_threshold=0.6):
     """Compares old and new syllabi for added, removed, and matched topics."""
     
-    # Load model once and reuse
-    model = load_model()
     
-    # Extract topics
     old_topics = extract_topics(old_syllabus)
     new_topics = extract_topics(new_syllabus)
 
-    # Generate embeddings
-    old_embeddings = model.encode([t[0] for t in old_topics], convert_to_tensor=True)
-    new_embeddings = model.encode([t[0] for t in new_topics], convert_to_tensor=True)
+   
+    model1, model2 = load_models()
+    texts_old = [t[0] for t in old_topics]
+    texts_new = [t[0] for t in new_topics]
+
+    old_embeddings = combined_embeddings(texts_old, model1, model2)
+    new_embeddings = combined_embeddings(texts_new, model1, model2)
+
 
     # Initialize results
     added, removed, matches, elaborations, shifted = [], [], [], [], []
