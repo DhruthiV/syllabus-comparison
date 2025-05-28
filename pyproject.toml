@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "syllabus_comparison"
-version = "0.1.2"
+version = "0.2.0"
 description = "A package for comparing syllabus topics using NLP."
 authors = [{ name = "Dhruthi V H", email = "dhruthivenkateshheerguppe@gmail.com" }]
 license = { file = "LICENSE" }
